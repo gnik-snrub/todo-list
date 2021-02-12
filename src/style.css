@@ -1,3 +1,101 @@
 body {
-    background-color: black;
+    background-color: rgb(236, 236, 236);
+    height: 100%;
+    display: grid;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-areas:
+      "sidebar project-page .";
+}
+
+.sidebar {
+    grid-area: sidebar;
+    display: grid;
+    grid-template-rows: 1fr 13fr;
+    grid-template-areas:
+      "header"
+      "project-list";
+}
+
+.header {
+    grid-area: header;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgb(155, 155, 155);
+}
+
+.project-list {
+    grid-area: project-list;
+}
+
+.project-page {
+    grid-area: project-page;
+    margin-left: 10px;
+    display: grid;
+    grid-template-rows: 1fr 6fr;
+    grid-template-areas:
+      "project-details"
+      "todo-list";
+}
+
+.project-details {
+    grid-area: project-details;
+    padding: 20px;
+    border-bottom: 1px solid rgb(155, 155, 155);
+}
+.project-title {
+    font-size: 3.5rem;
+}
+.project-description {
+    font-size: 1.5rem;
+}
+
+.todo-list {
+    grid-area: todo-list;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.todo {
+    display: grid;
+    grid-template-columns: 10fr 1fr;
+    grid-template-areas:
+      "todo-title todo-duedate";
+    margin: 3px 0px;
+}
+
+.todo-title {
+    grid-area: todo-title;
+    margin-left: 8px;
+    margin-right: 10px;
+}
+.todo-duedate {
+    grid-area: todo-duedate;
+    text-align: right;
+    margin-right: 8px;
+}
+
+.priority-one {
+    color: green;
+}
+.priority-two {
+    color: blue;
+}
+.priority-three {
+    color: red;
 }
