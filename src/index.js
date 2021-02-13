@@ -1,8 +1,10 @@
 import './style.css'
 import { test } from './modules/testbed';
+import { sidebar } from './modules/ui/sidebar.js'
 
 function init() {
-    test()
+    let app = test()
+    sidebar(app)
 }
 
 init()
