@@ -22,7 +22,7 @@ body {
 .sidebar {
     grid-area: sidebar;
     display: grid;
-    grid-template-rows: 1fr 10fr;
+    grid-template-rows: 1fr 7fr;
     grid-template-areas:
       "header"
       "project-list";

@@ -1,10 +1,10 @@
 import './style.css'
 import { test } from './modules/testbed';
-import { sidebar } from './modules/ui/sidebar.js'
+import { render } from './modules/ui/render.js'
 
 function init() {
     let app = test()
-    sidebar(app)
+    render(app, 0)
 }
 
 init()

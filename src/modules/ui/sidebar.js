@@ -4,11 +4,18 @@ function sidebar(app) {
     sidebar.classList.add('sidebar')
     content.appendChild(sidebar)
 
+    addHeader(sidebar)
+    populateProjectList(sidebar, app)
+}
+
+function addHeader(sidebar) {
     let header = document.createElement('header')
     header.classList.add('header')
     header.textContent = 'The Todo List'
     sidebar.appendChild(header)
+}
 
+function populateProjectList(sidebar, app) {
     let projectList = document.createElement('div')
     projectList.classList.add('project-list')
     sidebar.appendChild(projectList)
@@ -16,7 +23,7 @@ function sidebar(app) {
     for (let i = 0; i < app.projects.length; i++) {
         let newProject = document.createElement('div')
         newProject.classList.add('project')
-        newProject.textContent = `${app.projects[i].name}`
+        newProject.textContent = `${app.getProject(i).name}`
         projectList.appendChild(newProject)
     }
 }
