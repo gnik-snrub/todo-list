@@ -1,8 +1,7 @@
 body {
     background-color: rgb(243, 243, 243);
-    height: 100%;
-    display: grid;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
+    overflow-y: hidden;
 }
 
 .content {
@@ -16,7 +15,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 3fr 0.7fr;
     grid-template-areas:
-      "sidebar project-page .";
+      "sidebar page-content .";
 }
 
 .sidebar {
@@ -71,8 +70,8 @@ body {
     width: calc(100% - 38px);
 }
 
-.project-page {
-    grid-area: project-page;
+.page-content {
+    grid-area: page-content;
     display: grid;
     grid-template-rows: 1fr 6fr;
     grid-template-areas:

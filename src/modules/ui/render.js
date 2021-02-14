@@ -1,9 +1,22 @@
-import { sidebar } from "./sidebar";
-import { projectPage } from "./projectPage";
+import { renderSidebar } from "./sidebar"
+import { renderProjectPage } from "./projectPage"
+import { renderTodoPage } from "./todoPage"
 
-function render(app, projectIndex) {
-    sidebar(app)
-    projectPage(app, projectIndex)
+function defaultRender(app) {
+    loadSidebarRendering(app)
+    loadProjectPageRendering(app.getProject(0))
 }
 
-export { render }
+function loadSidebarRendering(app) {
+    renderSidebar(app)
+}
+
+function loadProjectPageRendering(project) {
+    renderProjectPage(project)
+}
+
+function loadTodoPageRendering(todo) {
+    renderTodoPage(todo)
+}
+
+export { defaultRender, loadSidebarRendering, loadProjectPageRendering, loadTodoPageRendering }

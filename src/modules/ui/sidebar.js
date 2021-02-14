@@ -1,4 +1,4 @@
-function sidebar(app) {
+function renderSidebar(app) {
     let content = document.querySelector('.content')
     let sidebar = document.createElement('div')
     sidebar.classList.add('sidebar')
@@ -24,8 +24,9 @@ function populateProjectList(sidebar, app) {
         let newProject = document.createElement('div')
         newProject.classList.add('project')
         newProject.textContent = `${app.getProject(i).name}`
+        newProject.setAttribute('data-value', i);
         projectList.appendChild(newProject)
     }
 }
 
-export { sidebar }
+export { renderSidebar }

@@ -1,10 +1,10 @@
 import './style.css'
-import { test } from './modules/testbed';
-import { render } from './modules/ui/render.js'
+import { sampleApp } from './modules/sampleApp'
+import { defaultSetup } from './modules/control'
 
 function init() {
-    let app = test()
-    render(app, 0)
+    let app = sampleApp()
+    defaultSetup(app)
 }
 
 init()

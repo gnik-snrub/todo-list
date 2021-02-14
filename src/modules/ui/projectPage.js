@@ -1,11 +1,11 @@
-function projectPage(app, projectIndex) {
+function renderProjectPage(proj) {
     let content = document.querySelector('.content')
     let projectPage = document.createElement('div')
-    projectPage.classList.add('project-page')
+    projectPage.classList.add('page-content')
     content.appendChild(projectPage)
 
-    generateDetails(projectPage, app.getProject(projectIndex))
-    populateTodoList(projectPage, app.getProject(projectIndex))
+    generateDetails(projectPage, proj)
+    populateTodoList(projectPage, proj)
 }
 
 function generateDetails(page, project) {
@@ -32,6 +32,7 @@ function populateTodoList(page, project) {
     for (let i = 0; i < project.todos.length; i++) {
         let newTodoElement = document.createElement('div')
         newTodoElement.classList.add('todo')
+        newTodoElement.setAttribute('data-value', i);
         todoList.appendChild(newTodoElement)
         let newTodo = project.getTodo(i)
         addTodoDetails(newTodoElement, newTodo)
@@ -73,4 +74,4 @@ function setTodoPriority(domElement, todo) {
       }
 }
 
-export { projectPage }
+export { renderProjectPage }
