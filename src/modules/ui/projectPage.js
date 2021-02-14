@@ -10,16 +10,16 @@ function renderProjectPage(proj) {
 
 function generateDetails(page, project) {
     let projectDetails = document.createElement('div')
-    projectDetails.classList.add('project-details')
+    projectDetails.classList.add('page-details')
     page.appendChild(projectDetails)
 
     let projectTitle = document.createElement('div')
-    projectTitle.classList.add('project-title')
+    projectTitle.classList.add('page-title')
     projectTitle.textContent = `${project.name}`
     projectDetails.appendChild(projectTitle)
 
     let projectDescription = document.createElement('div')
-    projectDescription.classList.add('project-description')
+    projectDescription.classList.add('page-description')
     projectDescription.textContent = `${project.description}`
     projectDetails.appendChild(projectDescription)
 }

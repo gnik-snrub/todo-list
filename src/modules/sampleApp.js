@@ -24,7 +24,7 @@ function projectTwo(app) {
     todoOne.addNote("Bread")
     todoOne.addNote("Milk")
     todoOne.addNote("Pasta")
-    todoOne.addNote("Chicken stock")
+    todoOne.addNote("Chicken stock and also some more chicken stock and also some more chicken stock and also some more chicken stock and also some more chicken stock and also some more chicken stock and also some more chicken stock and also some more chicken stock and also some more chicken stock and also some more chicken stock and also some more chicken stock and also some more chicken stock and also some more chicken stock and also some more chicken stock and also some more chicken stock and also some more chicken stock and also some more chicken stock and also some more ")
 }
 
 function projectThree(app) {

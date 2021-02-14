@@ -1,15 +1,5 @@
-import {
-    defaultRender,
-    loadSidebarRendering,
-    loadProjectPageRendering,
-    loadTodoPageRendering
-} from './ui/render'
-import {
-    defaultEventSetup,
-    loadSidebarEvents,
-    loadProjectPageEvents,
-    loadTodoPageEvents
-} from './events/events'
+import { defaultRender, loadSidebarRendering, loadProjectPageRendering, loadTodoPageRendering } from './ui/render'
+import { defaultEventSetup, loadSidebarEvents, loadProjectPageEvents, loadTodoPageEvents } from './events/events'
 
 function defaultSetup(app) {
     defaultRender(app)

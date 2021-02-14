@@ -10,16 +10,16 @@ function renderTodoPage(todo) {
 
 function generateDetails(page, todo) {
     let todoDetails = document.createElement('div')
-    todoDetails.classList.add('project-details')
+    todoDetails.classList.add('page-details')
     page.appendChild(todoDetails)
 
     let todoTitle = document.createElement('div')
-    todoTitle.classList.add('project-title')
+    todoTitle.classList.add('page-title')
     todoTitle.textContent = `${todo.name}`
     todoDetails.appendChild(todoTitle)
 
     let todoDescription = document.createElement('div')
-    todoDescription.classList.add('project-description')
+    todoDescription.classList.add('page-description')
     todoDescription.textContent = `${todo.description}`
     todoDetails.appendChild(todoDescription)
 }
@@ -33,8 +33,12 @@ function populateNoteList(page, todo) {
         let newNoteElement = document.createElement('div')
         newNoteElement.classList.add('note')
         newNoteElement.setAttribute('data-value', i);
-        newNoteElement.textContent = todo.notes[i]
         notesList.appendChild(newNoteElement)
+
+        let noteContent = document.createElement('div')
+        noteContent.classList.add('note-text')
+        noteContent.textContent = todo.notes[i]
+        newNoteElement.appendChild(noteContent)
     }
 }
 

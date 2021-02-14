@@ -75,24 +75,24 @@ body {
     display: grid;
     grid-template-rows: 1fr 6fr;
     grid-template-areas:
-      "project-details"
-      "todo-list";
+      "page-details"
+      "info-list";
 }
 
-.project-details {
-    grid-area: project-details;
+.page-details {
+    grid-area: page-details;
     padding: 20px;
     border-bottom: 1px solid rgb(155, 155, 155);
 }
-.project-title {
+.page-title {
     font-size: 3.5rem;
 }
-.project-description {
+.page-description {
     font-size: 1.5rem;
 }
 
 .todo-list {
-    grid-area: todo-list;
+    grid-area: info-list;
     display: flex;
     flex-direction: column;
     margin-top: 10px;
@@ -132,4 +132,21 @@ body {
 }
 .priority-three {
     color: rgb(189, 0, 0);
+}
+
+.note-list {
+    grid-area: info-list;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+.note {
+    padding: 3px 0px;
+    margin-left: 10px;
+    border-bottom: 1px solid rgb(194, 194, 194);
+}
+.note-text {
+    margin-left: 8px;
+    margin-right: 8px;
+    text-align: justify;
 }
