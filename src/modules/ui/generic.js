@@ -12,14 +12,18 @@ function generateDetails(page, obj) {
     objectDetails.classList.add('page-details')
     page.appendChild(objectDetails)
 
-    let objectTitle = document.createElement('textarea')
+    let objectTitle = document.createElement('span')
     objectTitle.classList.add('page-title')
-    objectTitle.value = `${obj.name}`
+    objectTitle.contentEditable = true
+    objectTitle.setAttribute('role', 'textbox')
+    objectTitle.textContent = `${obj.name}`
     objectDetails.appendChild(objectTitle)
 
-    let objectDescription = document.createElement('textarea')
+    let objectDescription = document.createElement('span')
     objectDescription.classList.add('page-description')
-    objectDescription.value = `${obj.description}`
+    objectDescription.contentEditable = true
+    objectDescription.setAttribute('role', 'textbox')
+    objectDescription.textContent = `${obj.description}`
     objectDetails.appendChild(objectDescription)
 }
 

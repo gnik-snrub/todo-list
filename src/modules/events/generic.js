@@ -3,13 +3,21 @@ import { loadSidebar } from '../control'
 function enablePageDetailEditing(obj, app) {
     let pageTitle = document.querySelector('.page-title')
     pageTitle.addEventListener('input', function() {
-        obj.name = pageTitle.value
+        if (pageTitle.textContent == '') {
+            obj.name = 'Un-named'
+        } else {
+            obj.name = pageTitle.textContent
+        }
         document.querySelector('.sidebar').remove()
         loadSidebar(app)
     })
     let pageDescription = document.querySelector('.page-description')
     pageDescription.addEventListener('input', function() {
-        obj.description = pageDescription.value
+        if (pageDescription.value == '') {
+            obj.description = 'Description goes here'
+        } else {
+            obj.description = pageDescription.value
+        }
     })
 }
 
