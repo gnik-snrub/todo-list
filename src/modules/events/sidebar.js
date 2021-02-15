@@ -5,7 +5,7 @@ function sidebarEvents(app) {
     projects.forEach(proj => proj.addEventListener('click', function() {
         let i = proj.getAttribute('data-value')
         document.querySelector('.page-content').remove()
-        loadProjectPage(app.getProject(i))
+        loadProjectPage(app.getProject(i), app)
     }));
 }
 

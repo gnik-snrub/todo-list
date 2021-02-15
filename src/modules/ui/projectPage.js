@@ -1,27 +1,10 @@
+import { generateDetails, createPageContent } from './generic'
+
 function renderProjectPage(proj) {
-    let content = document.querySelector('.content')
-    let projectPage = document.createElement('div')
-    projectPage.classList.add('page-content')
-    content.appendChild(projectPage)
+    let projectPage = createPageContent()
 
     generateDetails(projectPage, proj)
     populateTodoList(projectPage, proj)
-}
-
-function generateDetails(page, project) {
-    let projectDetails = document.createElement('div')
-    projectDetails.classList.add('page-details')
-    page.appendChild(projectDetails)
-
-    let projectTitle = document.createElement('div')
-    projectTitle.classList.add('page-title')
-    projectTitle.textContent = `${project.name}`
-    projectDetails.appendChild(projectTitle)
-
-    let projectDescription = document.createElement('div')
-    projectDescription.classList.add('page-description')
-    projectDescription.textContent = `${project.description}`
-    projectDetails.appendChild(projectDescription)
 }
 
 function populateTodoList(page, project) {

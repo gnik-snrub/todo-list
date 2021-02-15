@@ -1,27 +1,10 @@
+import { generateDetails, createPageContent } from './generic'
+
 function renderTodoPage(todo) {
-    let content = document.querySelector('.content')
-    let todoPage = document.createElement('div')
-    todoPage.classList.add('page-content')
-    content.appendChild(todoPage)
+    let todoPage = createPageContent()
 
     generateDetails(todoPage, todo)
     populateNoteList(todoPage, todo)
-}
-
-function generateDetails(page, todo) {
-    let todoDetails = document.createElement('div')
-    todoDetails.classList.add('page-details')
-    page.appendChild(todoDetails)
-
-    let todoTitle = document.createElement('div')
-    todoTitle.classList.add('page-title')
-    todoTitle.textContent = `${todo.name}`
-    todoDetails.appendChild(todoTitle)
-
-    let todoDescription = document.createElement('div')
-    todoDescription.classList.add('page-description')
-    todoDescription.textContent = `${todo.description}`
-    todoDetails.appendChild(todoDescription)
 }
 
 function populateNoteList(page, todo) {

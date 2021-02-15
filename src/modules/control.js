@@ -11,14 +11,14 @@ function loadSidebar(app) {
     loadSidebarEvents(app)
 }
 
-function loadProjectPage(project) {
+function loadProjectPage(project, app) {
     loadProjectPageRendering(project)
-    loadProjectPageEvents(project)
+    loadProjectPageEvents(project, app)
 }
 
-function loadTodoPage(todo) {
+function loadTodoPage(todo, app) {
     loadTodoPageRendering(todo)
-    loadTodoPageEvents(todo)
+    loadTodoPageEvents(todo, app)
 }
 
 export { defaultSetup, loadSidebar, loadProjectPage, loadTodoPage }
