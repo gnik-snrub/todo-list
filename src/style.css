@@ -117,9 +117,9 @@ body {
 
 .todo {
     display: grid;
-    grid-template-columns: 10fr 1fr;
+    grid-template-columns: 10fr 1fr 0.3fr 0.3fr 0.3fr;
     grid-template-areas:
-      "todo-title todo-duedate";
+      "todo-title todo-duedate todo-status todo-priority todo-remove";
     padding: 3px 0px;
     margin-left: 10px;
     border-bottom: 1px solid rgb(194, 194, 194);
@@ -135,20 +135,47 @@ body {
     margin-right: 10px;
     transition: 0.3s;
 }
+
 .todo-duedate {
     grid-area: todo-duedate;
     text-align: right;
     margin-right: 8px;
 }
 
+.todo-status {
+    grid-area: todo-status;
+    margin: auto;
+    height: 85%;
+    width: 85%;
+}
+
+.priority-box {
+    grid-area: todo-priority;
+    margin: auto;
+    height: 75%;
+    width: 75%;
+    border: 1px solid rgb(194, 194, 194);
+}
+
 .priority-one {
-    color: rgb(0, 105, 0);
+    background-color: rgb(68, 255, 68);
 }
 .priority-two {
-    color: rgb(236, 154, 0);
+    background-color: rgb(250, 189, 76);
 }
 .priority-three {
-    color: rgb(189, 0, 0);
+    background-color: rgb(255, 62, 62);
+}
+
+.todo-remove {
+    grid-area: todo-remove;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 77%;
+    width: 77%;
+    border: 1px solid rgb(194, 194, 194);
 }
 
 .note-list {

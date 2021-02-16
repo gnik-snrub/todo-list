@@ -1,6 +1,6 @@
 const todoFactory = (name, description, dueDate, priority) => {
     const notes = [] 
-    const status = false //true = complete; false = uncomplete
+    const status = false //true = complete; false = incomplete
 
     const addNote = (note) => {
         notes.push(note)

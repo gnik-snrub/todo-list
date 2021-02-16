@@ -11,7 +11,7 @@ function enableNoteEditing(todo, app) {
     notesList.forEach(note => note.addEventListener('input', function() {
         let noteIndex = note.getAttribute('data-value')
         if (note.textContent == '') {
-            todo.notes.splice(noteIndex, 1)
+            todo.removeNote(noteIndex)
             document.querySelector('.page-content').remove()
             loadTodoPage(todo, app)
         } else {

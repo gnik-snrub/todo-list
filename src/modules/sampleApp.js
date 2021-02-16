@@ -13,6 +13,17 @@ function projectOne(app) {
     let proj = app.getProject(0)
     proj.addTodo("Click me", "This is a todo. You can edit us too! Click on the project in the sidebar to return to the previous page", "2/2/2022", 2)
     proj.addTodo("I'll be 2nd", "Click the below buttons to change my priority status, mark me complete, or to remove me entirely", "2/2/2022", 1)
+    proj.addTodo("Click me", "This is a todo. You can edit us too! Click on the project in the sidebar to return to the previous page", "2/2/2022", 2)
+    proj.addTodo("I'll be 2nd", "Click the below buttons to change my priority status, mark me complete, or to remove me entirely", "2/2/2022", 1)
+    proj.addTodo("Click me", "This is a todo. You can edit us too! Click on the project in the sidebar to return to the previous page", "2/2/2022", 2)
+    proj.addTodo("I'll be 2nd", "Click the below buttons to change my priority status, mark me complete, or to remove me entirely", "2/2/2022", 1)
+    proj.addTodo("Click me", "This is a todo. You can edit us too! Click on the project in the sidebar to return to the previous page", "2/2/2022", 2)
+    proj.addTodo("I'll be 2nd", "Click the below buttons to change my priority status, mark me complete, or to remove me entirely", "2/2/2022", 1)
+    proj.addTodo("Click me", "This is a todo. You can edit us too! Click on the project in the sidebar to return to the previous page", "2/2/2022", 2)
+    proj.addTodo("I'll be 2nd", "Click the below buttons to change my priority status, mark me complete, or to remove me entirely", "2/2/2022", 1)
+    proj.addTodo("Click me", "This is a todo. You can edit us too! Click on the project in the sidebar to return to the previous page", "2/2/2022", 2)
+    proj.addTodo("I'll be 2nd", "Click the below buttons to change my priority status, mark me complete, or to remove me entirely", "2/2/2022", 1)
+    proj.getTodo(1).status = true
 }
 
 function projectTwo(app) {

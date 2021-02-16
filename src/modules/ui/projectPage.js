@@ -13,14 +13,23 @@ function populateTodoList(page, project) {
     page.appendChild(todoList)
 
     for (let i = 0; i < project.todos.length; i++) {
-        let newTodoElement = document.createElement('div')
-        newTodoElement.classList.add('todo')
-        newTodoElement.setAttribute('data-value', i);
-        todoList.appendChild(newTodoElement)
+        let newTodoElement = createTodoWrapper(todoList, i)
         let newTodo = project.getTodo(i)
+
         addTodoDetails(newTodoElement, newTodo)
-        setTodoPriority(newTodoElement, newTodo)
+        createTodoStatus(newTodoElement, newTodo)
+        createTodoPriority(newTodoElement, newTodo)
+        createRemoveTodoButton(newTodoElement, i)
     }
+}
+
+function createTodoWrapper(todoList, index) {
+    let todoWrapper = document.createElement('div')
+    todoWrapper.classList.add('todo')
+    todoWrapper.setAttribute('data-value', index)
+    todoList.appendChild(todoWrapper)
+
+    return todoWrapper
 }
 
 function addTodoDetails(domElement, todo) {
@@ -35,26 +44,42 @@ function addTodoDetails(domElement, todo) {
     domElement.appendChild(todoDueDate)
 }
 
-function setTodoPriority(domElement, todo) {
+function createTodoStatus(domElement, todo) {
+    let statusToggle = document.createElement('input')
+    statusToggle.classList.add('todo-status')
+    statusToggle.setAttribute('type', 'checkbox')
+    if (todo.status) {
+        statusToggle.checked = true
+        domElement.firstChild.style.setProperty('text-decoration', 'line-through')
+    }
+    domElement.appendChild(statusToggle)
+}
+
+function createTodoPriority(domElement, todo) {
+    let priorityBox = document.createElement('div')
+    priorityBox.classList.add('priority-box')
     switch(todo.priority) {
         case 1:
-            domElement.classList.add('priority-one')
-            domElement.classList.remove('priority-two')
-            domElement.classList.remove('priority-three')
+            priorityBox.classList.add('priority-one')
             break;
         case 2:
-            domElement.classList.remove('priority-one')
-            domElement.classList.add('priority-two')
-            domElement.classList.remove('priority-three')
+            priorityBox.classList.add('priority-two')
             break;
         case 3:
-            domElement.classList.remove('priority-one')
-            domElement.classList.remove('priority-two')
-            domElement.classList.add('priority-three')
+            priorityBox.classList.add('priority-three')
             break;
         default:
-          
-      }
+    }
+    domElement.appendChild(priorityBox)
+}
+
+
+function createRemoveTodoButton(domElement, index) {
+    let removeButton = document.createElement('div')
+    removeButton.classList.add('todo-remove')
+    removeButton.textContent = 'X'
+    removeButton.setAttribute('data-value', index)
+    domElement.appendChild(removeButton)
 }
 
 export { renderProjectPage }
