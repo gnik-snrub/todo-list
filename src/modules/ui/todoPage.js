@@ -18,11 +18,25 @@ function populateNoteList(page, todo) {
         newNoteElement.setAttribute('data-value', i);
         notesList.appendChild(newNoteElement)
 
-        let noteContent = document.createElement('div')
+        let noteContent = document.createElement('span')
         noteContent.classList.add('note-text')
+        noteContent.contentEditable = true
+        noteContent.setAttribute('role', 'textbox')
         noteContent.textContent = todo.notes[i]
         newNoteElement.appendChild(noteContent)
     }
+}
+
+function addFunctionButtons(page) {
+
+    let priorityChange = document.createElement('button');
+    page.firstChild().appendChild(priorityChange)
+
+    let statusToggle = document.createElement('button');
+    page.firstChild().appendChild(statusToggle)
+    
+    let removeTodo = document.createElement('button');
+    page.firstChild().appendChild(removeTodo)
 }
 
 export { renderTodoPage }

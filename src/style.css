@@ -166,4 +166,10 @@ body {
     margin-left: 8px;
     margin-right: 8px;
     text-align: justify;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.note-text:focus {
+    outline: none;
 }

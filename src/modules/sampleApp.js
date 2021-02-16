@@ -9,10 +9,10 @@ function sampleApp() {
 }
 
 function projectOne(app) {
-    app.addProject("Default", "This is a test project")
+    app.addProject("This is a test project", "I'm a description! Click on me, or the above title, and you can make me say anything you want.")
     let proj = app.getProject(0)
-    proj.addTodo("Eat the dishes", "Bite into a stack of ceramic", "2/2/2022", 2)
-    proj.addTodo("Feed the bird", "Put some new seed in his tray, and change his water", "2/2/2022", 1)
+    proj.addTodo("Click me", "This is a todo. You can edit us too! Click on the project in the sidebar to return to the previous page", "2/2/2022", 2)
+    proj.addTodo("I'll be 2nd", "Click the below buttons to change my priority status, mark me complete, or to remove me entirely", "2/2/2022", 1)
 }
 
 function projectTwo(app) {
