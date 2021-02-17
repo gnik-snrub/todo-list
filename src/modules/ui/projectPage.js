@@ -61,14 +61,12 @@ function createTodoPriority(domElement, todo) {
     switch(todo.priority) {
         case 1:
             priorityBox.classList.add('priority-one')
-            break;
+            break
         case 2:
             priorityBox.classList.add('priority-two')
-            break;
-        case 3:
-            priorityBox.classList.add('priority-three')
-            break;
+            break
         default:
+            priorityBox.classList.add('priority-three')
     }
     domElement.appendChild(priorityBox)
 }
