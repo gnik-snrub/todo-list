@@ -25,11 +25,24 @@ function populateProjectList(sidebar, app) {
     for (let i = 0; i < app.projects.length; i++) {
         let newProject = document.createElement('div')
         newProject.classList.add('project')
-        newProject.textContent = `${app.getProject(i).name}`
         newProject.setAttribute('data-value', i);
+        createProjectListNode(app, newProject, i)
         projectList.appendChild(newProject)
     }
     projectList.appendChild(createAddButton('project'))
+}
+
+function createProjectListNode(app, wrapper, index) {
+    let projectTitle = document.createElement('div')
+    projectTitle.classList.add('project-list-text')
+    projectTitle.textContent = `${app.getProject(index).name}`
+    wrapper.appendChild(projectTitle)
+    
+    let removeButton = document.createElement('div')
+    removeButton.classList.add('remove-project-button')
+    removeButton.textContent = 'X'
+    wrapper.appendChild(removeButton)
+
 }
 
 export { renderSidebar }

@@ -55,6 +55,11 @@ body {
     transition: 0.5s;
     transition-timing-function:cubic-bezier(0.68, -0.55, 0.265, 1.55);
     position: relative;
+
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "project-list-text remove-project";
 }
 .project::after {
     content: '';
@@ -71,6 +76,23 @@ body {
 }
 .project:hover::after {
     width: calc(100% - 38px);
+}
+.remove-project-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: remove-project;
+    margin-right: 10px;
+    transition: inherit;
+    transition-timing-function: inherit;
+}
+.remove-project-button:hover {
+    transform: rotate(180deg);
+}
+.project-list-text {
+    grid-area: project-list-text;
+    border-right: 1px solid rgb(155, 155, 155);
+    margin-right: 4px;
 }
 
 .page-content {
@@ -220,6 +242,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 1.33rem;
     padding: 4px 0px;
     margin-left: 10px;
 }
