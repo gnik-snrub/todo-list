@@ -21,8 +21,9 @@ function projectOne(app) {
     proj.addTodo(
         "I'll be 2nd",
         "Click the below buttons to change my priority status, mark me complete, or to remove me entirely",
-        new Date(2021, 5, 2),
+        new Date(2022, 0, 3),
         1)
+    proj.todos[1].status = true
 }
 
 function projectTwo(app) {
@@ -31,7 +32,7 @@ function projectTwo(app) {
     proj.addTodo(
         "Woolworths",
         "Things to get at Woolies",
-        new Date(2021, 3, 13),
+        new Date(2021, 3, 23),
         1)
     proj.addTodo(
         "Uniqlo",

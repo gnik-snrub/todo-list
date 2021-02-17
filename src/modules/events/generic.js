@@ -1,4 +1,4 @@
-import { loadProjectPage, loadSidebar } from '../control'
+import { loadSidebar } from '../control'
 
 function enablePageDetailEditing(obj, app) {
     let pageTitle = document.querySelector('.page-title')
@@ -9,8 +9,7 @@ function enablePageDetailEditing(obj, app) {
         } else {
             obj.name = pageTitle.textContent
         }
-        document.querySelector('.sidebar').remove()
-        loadSidebar(app)
+        resetSidebarAndSaveData(app)
     })
     let pageDescription = document.querySelector('.page-description')
     pageDescription.addEventListener('input', function() {
@@ -19,7 +18,13 @@ function enablePageDetailEditing(obj, app) {
         } else {
             obj.description = pageDescription.textContent
         }
+        resetSidebarAndSaveData(app)
     })
+}
+
+function resetSidebarAndSaveData(app) {
+    document.querySelector('.sidebar').remove()
+    loadSidebar(app)
 }
 
 export { enablePageDetailEditing }
