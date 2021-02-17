@@ -9,7 +9,9 @@ function sampleApp() {
 }
 
 function projectOne(app) {
-    app.addProject("This is a test project", "I'm a description! Click on me, or the above title, and you can make me say anything you want.")
+    app.addProject(
+        "This is a test project",
+        "I'm a description! Click on me, or the above title, and you can make me say anything you want.")
     let proj = app.getProject(0)
     proj.addTodo(
         "Click me",
@@ -21,7 +23,6 @@ function projectOne(app) {
         "Click the below buttons to change my priority status, mark me complete, or to remove me entirely",
         new Date(2021, 5, 2),
         1)
-    proj.getTodo(1).status = true
 }
 
 function projectTwo(app) {

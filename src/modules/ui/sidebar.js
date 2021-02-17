@@ -1,3 +1,5 @@
+import { createAddButton } from './generic'
+
 function renderSidebar(app) {
     let content = document.querySelector('.content')
     let sidebar = document.createElement('div')
@@ -27,6 +29,7 @@ function populateProjectList(sidebar, app) {
         newProject.setAttribute('data-value', i);
         projectList.appendChild(newProject)
     }
+    projectList.appendChild(createAddButton('project'))
 }
 
 export { renderSidebar }

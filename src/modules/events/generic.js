@@ -1,10 +1,11 @@
-import { loadSidebar } from '../control'
+import { loadProjectPage, loadSidebar } from '../control'
 
 function enablePageDetailEditing(obj, app) {
     let pageTitle = document.querySelector('.page-title')
     pageTitle.addEventListener('input', function() {
         if (pageTitle.textContent == '') {
             obj.name = 'Un-named'
+            pageTitle.textContent = obj.name
         } else {
             obj.name = pageTitle.textContent
         }
@@ -16,7 +17,7 @@ function enablePageDetailEditing(obj, app) {
         if (pageDescription.value == '') {
             obj.description = 'Description goes here'
         } else {
-            obj.description = pageDescription.value
+            obj.description = pageDescription.textContent
         }
     })
 }

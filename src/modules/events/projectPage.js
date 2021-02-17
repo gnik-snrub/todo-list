@@ -8,6 +8,7 @@ function projectPageEvents(project, app) {
     changeTodoPriority(project)
     toggleTodoStatus(project)
     removeTodo(project, app)
+    addTodoButton(project, app)
 }
 
 function gotoTodoPage(project, app) {
@@ -75,5 +76,13 @@ function removeTodo(project, app) {
     }))
 }
 
+function addTodoButton(project, app) {
+    let addTodo = document.getElementById('add-todo')
+    addTodo.addEventListener('click', function() {
+        project.addTodo('New todo! Click on me to change my name', 'And edit my details too', new Date(), 1)
+        document.querySelector('.page-content').remove()
+        loadProjectPage(project, app)
+    })
+}
 
 export { projectPageEvents }
