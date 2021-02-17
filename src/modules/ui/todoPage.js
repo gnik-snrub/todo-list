@@ -5,6 +5,23 @@ function renderTodoPage(todo) {
 
     generateDetails(todoPage, todo)
     populateNoteList(todoPage, todo)
+    customTodoDetails(todoPage, todo)
+}
+
+function customTodoDetails(todoPage, todo) {
+    if (todo.status) {
+        todoPage.firstChild.style.setProperty('text-decoration', 'line-through')
+    }
+    switch(todo.priority) {
+        case 1:
+            todoPage.firstChild.classList.add('priority-one')
+            break
+        case 2:
+            todoPage.firstChild.classList.add('priority-two')
+            break
+        default:
+            todoPage.firstChild.classList.add('priority-three')
+    }
 }
 
 function populateNoteList(page, todo) {

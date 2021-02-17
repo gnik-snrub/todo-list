@@ -94,6 +94,20 @@ body {
     border-right: 1px solid rgb(155, 155, 155);
     margin-right: 4px;
 }
+.project-list-text::after {
+    content: '';
+    width: 0;
+    border-top: 1px solid rgb(155, 155, 155);
+    position: absolute;
+    top: 0;
+    right: -1px;
+    transition: 0.5s;
+    transition-timing-function:cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.project-list-text:hover::after {
+    width: calc(100% - 38px);
+    border-top: 1px solid rgb(155, 155, 155);
+}
 
 .page-content {
     grid-area: page-content;
@@ -201,7 +215,7 @@ body {
     background-color: rgb(250, 189, 76);
 }
 .priority-three {
-    background-color: rgb(255, 62, 62);
+    background-color: rgb(238, 78, 78);
 }
 
 .todo-remove {
@@ -237,7 +251,6 @@ body {
 .note-text:focus {
     outline: none;
 }
-
 .add-button {
     display: flex;
     align-items: center;
@@ -245,4 +258,9 @@ body {
     font-size: 1.33rem;
     padding: 4px 0px;
     margin-left: 10px;
+    transition: 0.5s;
+    transition-timing-function:cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.add-button:hover {
+    font-size: 1.66rem;
 }
