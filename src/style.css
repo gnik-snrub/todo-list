@@ -117,7 +117,7 @@ body {
 
 .todo {
     display: grid;
-    grid-template-columns: 10fr 1fr 0.3fr 0.3fr 0.3fr;
+    grid-template-columns: 10fr 2fr 0.3fr 0.3fr 0.3fr;
     grid-template-areas:
       "todo-title todo-duedate todo-status todo-priority todo-remove";
     padding: 3px 0px;
@@ -138,22 +138,37 @@ body {
 
 .todo-duedate {
     grid-area: todo-duedate;
+    margin-right: 5px;
+    border: transparent;
+    background-color: inherit;
     text-align: right;
-    margin-right: 8px;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.todo-duedate:focus {
+    outline: none;
+}
+.todo-duedate::-webkit-inner-spin-button,
+.todo-duedate::-webkit-calendar-picker-indicator {
+    display:none;
 }
 
 .todo-status {
     grid-area: todo-status;
     margin: auto;
-    height: 85%;
-    width: 85%;
+    height: 20px;
+    width: 20px;
 }
 
 .priority-box {
     grid-area: todo-priority;
     margin: auto;
-    height: 75%;
-    width: 75%;
+    height: 17px;
+    width: 17px;
     border: 1px solid rgb(194, 194, 194);
 }
 
@@ -173,8 +188,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 77%;
-    width: 77%;
+    height: 17px;
+    width: 17px;
     border: 1px solid rgb(194, 194, 194);
 }
 
@@ -199,4 +214,13 @@ body {
 
 .note-text:focus {
     outline: none;
+}
+
+.add-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 0px;
+    margin-left: 10px;
+    border-bottom: 1px solid rgb(194, 194, 194);
 }

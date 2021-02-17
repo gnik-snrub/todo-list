@@ -27,4 +27,13 @@ function generateDetails(page, obj) {
     objectDetails.appendChild(objectDescription)
 }
 
-export { generateDetails, createPageContent }
+function createAddButton(type) {
+    let addButton = document.createElement('div')
+    addButton.classList.add('add-button')
+    addButton.id = `add-${type}`
+    addButton.textContent = '+'
+
+    return addButton
+}
+
+export { generateDetails, createPageContent, createAddButton }

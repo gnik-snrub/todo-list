@@ -1,4 +1,4 @@
-import { generateDetails, createPageContent } from './generic'
+import { generateDetails, createPageContent, createAddButton } from './generic'
 
 function renderTodoPage(todo) {
     let todoPage = createPageContent()
@@ -25,18 +25,7 @@ function populateNoteList(page, todo) {
         noteContent.textContent = todo.notes[i]
         newNoteElement.appendChild(noteContent)
     }
-}
-
-function addFunctionButtons(page) {
-
-    let priorityChange = document.createElement('button');
-    page.firstChild().appendChild(priorityChange)
-
-    let statusToggle = document.createElement('button');
-    page.firstChild().appendChild(statusToggle)
-    
-    let removeTodo = document.createElement('button');
-    page.firstChild().appendChild(removeTodo)
+    notesList.appendChild(createAddButton('note'))
 }
 
 export { renderTodoPage }

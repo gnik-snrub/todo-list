@@ -1,4 +1,4 @@
-import { generateDetails, createPageContent } from './generic'
+import { generateDetails, createPageContent, createAddButton } from './generic'
 
 function renderProjectPage(proj) {
     let projectPage = createPageContent()
@@ -21,6 +21,7 @@ function populateTodoList(page, project) {
         createTodoPriority(newTodoElement, newTodo)
         createRemoveTodoButton(newTodoElement, i)
     }
+    todoList.appendChild(createAddButton('todo'))
 }
 
 function createTodoWrapper(todoList, index) {
@@ -38,9 +39,10 @@ function addTodoDetails(domElement, todo) {
     todoTitle.textContent = `${todo.name}`
     domElement.appendChild(todoTitle)
 
-    let todoDueDate = document.createElement('div')
+    let todoDueDate = document.createElement('input')
     todoDueDate.classList.add('todo-duedate')
-    todoDueDate.textContent = `${todo.dueDate}`
+    todoDueDate.setAttribute('type', 'date')
+    todoDueDate.valueAsDate = todo.dueDate
     domElement.appendChild(todoDueDate)
 }
 

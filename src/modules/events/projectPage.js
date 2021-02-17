@@ -4,6 +4,7 @@ import { enablePageDetailEditing } from './generic'
 function projectPageEvents(project, app) {
     enablePageDetailEditing(project, app)
     gotoTodoPage(project, app)
+    changeDueDate(project)
     changeTodoPriority(project)
     toggleTodoStatus(project)
     removeTodo(project, app)
@@ -18,8 +19,12 @@ function gotoTodoPage(project, app) {
     }));
 }
 
-function changeDueDate() {
-
+function changeDueDate(project) {
+    let dueDates = document.querySelectorAll('.todo-duedate')
+    dueDates.forEach(date => date.addEventListener('input', function() {
+        let todo = project.todos[date.parentElement.getAttribute('data-value')]
+        todo.dueDate = new Date(date.valueAsDate)
+    }))
 }
 
 function toggleTodoStatus(project) {
