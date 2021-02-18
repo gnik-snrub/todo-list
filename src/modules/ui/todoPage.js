@@ -28,6 +28,7 @@ function populateNoteList(page, todo) {
     let notesList = document.createElement('div')
     notesList.classList.add('note-list')
     page.appendChild(notesList)
+    notesList.appendChild(createAddButton('note'))
 
     for (let i = 0; i < todo.notes.length; i++) {
         let newNoteElement = document.createElement('div')
@@ -42,7 +43,6 @@ function populateNoteList(page, todo) {
         noteContent.textContent = todo.notes[i]
         newNoteElement.appendChild(noteContent)
     }
-    notesList.appendChild(createAddButton('note'))
 }
 
 export { renderTodoPage }

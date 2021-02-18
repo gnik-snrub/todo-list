@@ -1,4 +1,4 @@
-import { loadSidebar } from '../control'
+import { loadSidebar, storeData } from '../control'
 
 function enablePageDetailEditing(obj, app) {
     let pageTitle = document.querySelector('.page-title')
@@ -18,7 +18,7 @@ function enablePageDetailEditing(obj, app) {
         } else {
             obj.description = pageDescription.textContent
         }
-        resetSidebarAndSaveData(app)
+        storeData(app)
     })
 }
 

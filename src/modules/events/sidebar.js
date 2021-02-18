@@ -36,12 +36,16 @@ function removeProjectButton(app) {
         app.removeProject(i)
 
         if (app.projects.length == 0) {
-            let topOfList = document.querySelector('.project-list').firstChild
-            topOfList.remove()
+            document.querySelector('.project-list').getElementsByTagName('div')[1].remove()
+            document.querySelector('.page-content').getElementsByTagName('div')[1].remove()
+            document.querySelector('.page-title').textContent = "No projects remaining"
+            document.querySelector('.page-description').textContent = "Click the '+' button in the sidebar to start a new project!"
         }
 
-        document.querySelector('.page-content').remove()
-        loadProjectPage(app.getProject(0), app)
+        if (app.projects.length > 0) {
+            document.querySelector('.page-content').remove()
+            loadProjectPage(app.getProject(0), app)
+        }
 
         document.querySelector('.sidebar').remove()
         loadSidebar(app)

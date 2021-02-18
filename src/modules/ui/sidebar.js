@@ -21,6 +21,7 @@ function populateProjectList(sidebar, app) {
     let projectList = document.createElement('div')
     projectList.classList.add('project-list')
     sidebar.appendChild(projectList)
+    projectList.appendChild(createAddButton('project'))
 
     for (let i = 0; i < app.projects.length; i++) {
         let newProject = document.createElement('div')
@@ -29,7 +30,6 @@ function populateProjectList(sidebar, app) {
         createProjectListNode(app, newProject, i)
         projectList.appendChild(newProject)
     }
-    projectList.appendChild(createAddButton('project'))
 }
 
 function createProjectListNode(app, wrapper, index) {

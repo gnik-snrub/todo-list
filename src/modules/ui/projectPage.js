@@ -11,6 +11,7 @@ function populateTodoList(page, project) {
     let todoList = document.createElement('div')
     todoList.classList.add('todo-list')
     page.appendChild(todoList)
+    todoList.appendChild(createAddButton('todo'))
 
     for (let i = 0; i < project.todos.length; i++) {
         let newTodoElement = createTodoWrapper(todoList, i)
@@ -21,7 +22,6 @@ function populateTodoList(page, project) {
         createTodoPriority(newTodoElement, newTodo)
         createRemoveTodoButton(newTodoElement, i)
     }
-    todoList.appendChild(createAddButton('todo'))
 }
 
 function createTodoWrapper(todoList, index) {
