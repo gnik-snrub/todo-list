@@ -1,4 +1,4 @@
-import { loadProjectPage, loadSidebar, defaultSetup } from '../control'
+import { loadProjectPage, loadSidebar } from '../control'
 
 function sidebarEvents(app) {
     goToProjectPage(app)
